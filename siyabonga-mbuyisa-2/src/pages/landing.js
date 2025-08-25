@@ -138,9 +138,9 @@ const HomePage = () => {
         <p className="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in animation-delay-500">
           I am passionate about problem solving through code and turning ideas into reality.
         </p>
-        <button className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg animate-fade-in animation-delay-1000">
+        {/* <button className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg animate-fade-in animation-delay-1000">
           View My Work
-        </button>
+        </button> */}
       </div>
       
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -692,7 +692,9 @@ const ContactPage = () => {
             ))}
           </div>
           
-          <form className="space-y-6">
+          <form className="space-y-6" 
+            action="https://formsubmit.co/siyabongambuyisa7@gmail.com" 
+            method="POST">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-gray-300 mb-2">Name</label>
