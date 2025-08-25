@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import SSO from '../assets/videos/Walkthrough.mp4';
+import EPG from '../assets/videos/11.02.2025_12.52.48_REC.mp4';
+import CRO from '../assets/images/sustainability-13-00225-g001-550.png';
+import KGA from '../assets/images/0_3dS6Jw8NzzSD-mn8.jpg';
 
 // Main App Component
 const MainApp = () => {
@@ -217,44 +221,49 @@ const CertificatePage = () => {
   const certificates = [
     {
       id: 1,
-      title: 'AWS Certified Developer Associate',
-      issuer: 'Amazon Web Services',
-      date: 'June 2023',
-      description: 'Validation of technical expertise in developing and maintaining applications on AWS.',
-      details: 'This certification demonstrates proficiency in developing, deploying, and debugging cloud-based applications using AWS. Covered services include AWS Lambda, Amazon API Gateway, Amazon S3, AWS DynamoDB, and more.'
+      title: 'BSc in Computer Science',
+      issuer: 'University of Pretoria',
+      date: 'July 2025',
+      description: 'Bachelor of Science degree in Computer Science with focus on software engineering and algorithms.',
+      details: 'This comprehensive program covered fundamental computer science concepts including data structures, algorithms, software engineering, database systems, and network security and Artificial Intelligence . Completed with 66% average grade.',
+      credentialLink: 'https://drive.google.com/file/d/12Mh9MFh8bqWHp7_pPt0A5M4P--tV6Zdn/view?usp=drive_link'
     },
     {
       id: 2,
-      title: 'React Developer Certification',
-      issuer: 'Meta',
-      date: 'March 2023',
-      description: 'Advanced React concepts including hooks, context API, and performance optimization.',
-      details: 'Comprehensive certification covering advanced React patterns, state management, React Router, testing with Jest and React Testing Library, and building scalable React applications.'
+      title: 'AWS Serverless',
+      issuer: 'Amazon Web Services',
+      date: 'Jan 2025',
+      description: 'Specialized certification in serverless architecture and implementation on AWS.',
+      details: 'This certification validates expertise in designing and implementing serverless solutions using AWS Lambda, API Gateway, DynamoDB, and other serverless technologies. Covers best practices for security, scalability, and cost optimization.',
+      credentialLink: 'https://drive.google.com/file/d/17BT4pBAkYOaa9-75cxdv-DQGpUF1-C1n/view?usp=drive_link'
     },
     {
       id: 3,
-      title: 'Python for Data Science',
-      issuer: 'University of Michigan (Coursera)',
-      date: 'January 2023',
-      description: 'Data manipulation and analysis with Pandas, NumPy, and visualization libraries.',
-      details: 'Specialization focusing on Python programming for data analysis, statistical modeling, machine learning fundamentals, and data visualization using Matplotlib and Seaborn.'
+      title: 'AWS Cloud Practitioner',
+      issuer: 'Amazon Web Services',
+      date: 'Jan 2025',
+      description: 'Foundational cloud certification covering AWS core services and cloud concepts.',
+      details: 'The AWS Cloud Practitioner certification validates understanding of AWS Cloud concepts, core AWS services, security, architecture, pricing, and support. Demonstrates cloud fluency and foundational AWS knowledge.',
+      credentialLink: 'https://drive.google.com/file/d/1VXjEVeyB8lKG9gqpNijmWYUY5crAA5tT/view?usp=drive_link'
     },
-    {
-      id: 4,
-      title: 'Full Stack Web Development',
-      issuer: 'freeCodeCamp',
-      date: 'November 2022',
-      description: 'Comprehensive full-stack JavaScript development certification.',
-      details: 'Rigorous curriculum covering HTML5, CSS3, JavaScript, React, Node.js, Express.js, MongoDB, and DevOps. Completed several projects including a full-stack application with user authentication.'
-    },
-    {
-      id: 5,
-      title: 'Java Programming Masterclass',
-      issuer: 'Udemy',
-      date: 'August 2022',
-      description: 'Comprehensive Java programming covering fundamentals to advanced concepts.',
-      details: 'Masterclass covering Java syntax, object-oriented programming, data structures, algorithms, multithreading, JDBC, and JavaFX for building desktop applications.'
-    }
+    // {
+    //   id: 4,
+    //   title: 'React Developer Certification',
+    //   issuer: 'Meta',
+    //   date: 'March 2023',
+    //   description: 'Advanced React concepts including hooks, context API, and performance optimization.',
+    //   details: 'Comprehensive certification covering advanced React patterns, state management, React Router, testing with Jest and React Testing Library, and building scalable React applications.',
+    //   credentialLink: 'https://drive.google.com/file/d/example4/view'
+    // },
+    // {
+    //   id: 5,
+    //   title: 'Python for Data Science',
+    //   issuer: 'University of Michigan (Coursera)',
+    //   date: 'January 2023',
+    //   description: 'Data manipulation and analysis with Pandas, NumPy, and visualization libraries.',
+    //   details: 'Specialization focusing on Python programming for data analysis, statistical modeling, machine learning fundamentals, and data visualization using Matplotlib and Seaborn.',
+    //   credentialLink: 'https://drive.google.com/file/d/example5/view'
+    // }
   ];
 
   const toggleExpand = (id) => {
@@ -274,41 +283,90 @@ const CertificatePage = () => {
           {certificates.slice(0, displayCount).map((cert, index) => (
             <div 
               key={cert.id}
-              className={`bg-gray-800 rounded-xl p-6 transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer ${
-                expandedCertificate === cert.id ? 'ring-2 ring-blue-500' : ''
-              } animate-fade-in`}
+              className={`bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer ${
+                expandedCertificate === cert.id ? 'ring-2 ring-blue-500 shadow-2xl' : ''
+              } animate-fade-in flex flex-col`}
               style={{ animationDelay: `${index * 100}ms` }}
               onClick={() => toggleExpand(cert.id)}
             >
-              <div className="mb-4">
-                <h3 className="text-xl font-semibold mb-2">{cert.title}</h3>
-                <p className="text-blue-400">{cert.issuer}</p>
-                <p className="text-gray-400 text-sm">{cert.date}</p>
+              <div className="mb-4 flex-grow">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-xl font-semibold">{cert.title}</h3>
+                  <span className="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded-full">
+                    {cert.issuer.includes('AWS') ? 'AWS' : 'Academic'}
+                  </span>
+                </div>
+                <p className="text-blue-400 text-sm">{cert.issuer}</p>
+                <p className="text-gray-400 text-xs mb-4">{cert.date}</p>
+                
+                <p className="text-gray-300 text-sm mb-4">{cert.description}</p>
+                
+                {expandedCertificate === cert.id && (
+                  <div className="mt-4 pt-4 border-t border-gray-700">
+                    <p className="text-gray-300 text-sm mb-4">{cert.details}</p>
+                    <a
+                      href={cert.credentialLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-blue-400 hover:text-blue-300 text-sm"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd"></path>
+                      </svg>
+                      View Credential
+                    </a>
+                  </div>
+                )}
               </div>
               
-              <p className="text-gray-300 mb-4">{cert.description}</p>
-              
-              {expandedCertificate === cert.id && (
-                <div className="mt-4 pt-4 border-t border-gray-700">
-                  <p className="text-gray-300">{cert.details}</p>
+              <div className="mt-auto pt-4">
+                <div className="flex justify-between items-center">
+                  <div className="text-blue-400 text-sm">
+                    {expandedCertificate === cert.id ? 'Show less' : 'Click to expand'}
+                  </div>
+                  <div className="flex space-x-2">
+                    <a
+                      href={cert.credentialLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                      title="View on Google Drive"
+                    >
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                      </svg>
+                    </a>
+                  </div>
                 </div>
-              )}
-              
-              <div className="mt-4 text-blue-400">
-                {expandedCertificate === cert.id ? 'Show less' : 'Click to expand'}
               </div>
             </div>
           ))}
         </div>
         
-        {displayCount < certificates.length && (
+        {displayCount < certificates.length ? (
           <div className="text-center mt-12">
             <button 
               onClick={() => setDisplayCount(certificates.length)}
-              className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+              className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              Load More Certificates
+              View All Certificates
             </button>
+          </div>
+        ) : (
+          <div className="text-center mt-12">
+            <a
+              href="https://drive.google.com/drive/folders/19HakgiUIJAW-TFoGiGSfP4KUD9dLPzTl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg font-semibold hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              View More on Google Drive
+            </a>
           </div>
         )}
       </div>
@@ -316,65 +374,132 @@ const CertificatePage = () => {
   );
 };
 
+
 // Projects Page Component
 const ProjectsPage = () => {
   const projects = [
     {
       id: 1,
-      name: 'E-Commerce Platform',
-      year: 2023,
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      description: 'Full-featured online store with shopping cart, user authentication, and payment processing.',
-      githubUrl: 'https://github.com',
-      image: 'https://via.placeholder.com/400x250/1F2937/FFFFFF?text=E-Commerce+Platform'
+      name: 'Smart Storage Organizer',
+      year: 2024,
+      technologies: ['Android', 'Java', 'Python', 'AWS', 'Docker'],
+      description: 'Smart Storage Organization is an intuitive Android application aimed at streamlining the organization items. By leveraging our app, users can easily categorize, locate, and manage their inventory, ensuring a more organized and efficient environment.',
+      githubUrl: 'https://github.com/COS301-SE-2024/Smart-Storage-Organizer-Application',
+      media: {
+        type: 'video',
+        url: SSO // Example YouTube embed URL
+      }
     },
     {
       id: 2,
-      name: 'Task Management App',
-      year: 2022,
-      technologies: ['React Native', 'Firebase', 'Redux'],
-      description: 'Cross-platform task manager with real-time synchronization and collaborative features.',
-      githubUrl: 'https://github.com',
-      image: 'https://via.placeholder.com/400x250/1F2937/FFFFFF?text=Task+Manager'
+      name: 'Ekhaya PubnGrill POS',
+      year: 2025,
+      technologies: ['Firebase', 'NextJS'],
+      description: 'Ekhaya PubnGrill is a nightclub in Botswana. This custom Point of Sale (POS) system is designed to meet their specific needs. By leveraging our application, Ekhaya can efficiently manage inventory, users, and permissions while processing transactions seamlessly within the club.',
+      githubUrl: 'https://github.com/Siya2-0/Ekhaya2.0',
+      media: {
+        type: 'video',
+        url: EPG // Example YouTube embed URL
+      }
     },
     {
       id: 3,
-      name: 'Weather Dashboard',
-      year: 2022,
-      technologies: ['JavaScript', 'REST API', 'Chart.js'],
-      description: 'Interactive weather application with forecasts, charts, and location-based services.',
-      githubUrl: 'https://github.com',
-      image: 'https://via.placeholder.com/400x250/1F2937/FFFFFF?text=Weather+Dashboard'
+      name: 'Campus Route Optimization',
+      year: 2024,
+      technologies: ['Java'],
+      description: 'This project focuses on optimizing the route for a student visiting multiple campuses to obtain clearance signatures from module coordinators. The objective is to minimize the total distance traveled by identifying the most efficient route that visits each campus exactly once and returns to the starting point.',
+      githubUrl: 'https://github.com/Siya2-0/Find-Optimal-Route',
+      media: {
+        type: 'image',
+        url: CRO // Example YouTube embed URL
+      }
     },
     {
       id: 4,
-      name: 'Social Media Analytics',
-      year: 2023,
-      technologies: ['Python', 'Django', 'D3.js', 'PostgreSQL'],
-      description: 'Dashboard for analyzing social media engagement and performance metrics.',
-      githubUrl: 'https://github.com',
-      image: 'https://via.placeholder.com/400x250/1F2937/FFFFFF?text=Social+Analytics'
+      name: 'Knapsack - Genetic Algorithm',
+      year: 2024,
+      technologies: ['Java'],
+      description: 'This project implements Genetic Algorithms for solving the knapsack problem. It includes two main classes: GA and GALocalSearch, which implement the genetic algorithm and genetic algorithm with local search, respectively.',
+      githubUrl: 'https://github.com/Siya2-0/Knapsack-Genetic-Algorithms',
+      media: {
+        type: 'image',
+        url: KGA
+      }
     }
+    // {
+    //   id: 5,
+    //   name: 'AI Stock Predictor',
+    //   year: 2023,
+    //   technologies: ['Python', 'TensorFlow', 'AWS', 'React'],
+    //   description: 'Machine learning model to predict stock market trends using historical data.',
+    //   githubUrl: 'https://github.com',
+    //   media: {
+    //     type: 'video',
+    //     url: 'https://www.youtube.com/embed/LKnqECcg6Gw' // Example YouTube embed URL
+    //   }
+    // },
+    // {
+    //   id: 6,
+    //   name: 'Portfolio Website',
+    //   year: 2023,
+    //   technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
+    //   description: 'Responsive portfolio website with animations and modern design.',
+    //   githubUrl: 'https://github.com',
+    //   media: {
+    //     type: 'image',
+    //     url: 'https://via.placeholder.com/400x250/1F2937/FFFFFF?text=Portfolio+Website'
+    //   }
+    // }
   ];
+
+  const [activeVideo, setActiveVideo] = useState(null);
+
+  const handleVideoPlay = (projectId) => {
+    setActiveVideo(projectId);
+  };
+
+  const handleVideoPause = () => {
+    setActiveVideo(null);
+  };
 
   return (
     <section className="min-h-screen py-16 px-4">
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-center">Projects</h2>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div 
               key={project.id}
-              className="bg-gray-800 rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-xl animate-fade-in"
+              className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-xl animate-fade-in group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.name}
-                  className="w-full h-full object-cover"
-                />
+              <div className="h-48 overflow-hidden relative">
+                {project.media.type === 'video' ? (
+                  <div className="w-full h-full">
+                    <iframe
+                      src={`${project.media.url}?rel=0&modestbranding=1`}
+                      className="w-full h-full object-cover"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      title={project.name}
+                    ></iframe>
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg className="w-12 h-12 text-white opacity-70" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <img 
+                    src={project.media.url} 
+                    alt={project.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                )}
               </div>
               
               <div className="p-6">
@@ -385,11 +510,13 @@ const ProjectsPage = () => {
                     href={project.githubUrl} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors flex items-center"
+                    title="View on GitHub"
                   >
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-6 h-6 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                     </svg>
+                    Code
                   </a>
                 </div>
                 
@@ -405,14 +532,39 @@ const ProjectsPage = () => {
                     </span>
                   ))}
                 </div>
+
+                {project.media.type === 'video' && (
+                  <div className="mt-4 flex items-center text-sm text-blue-400">
+                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
+                    </svg>
+                    Video demo available
+                  </div>
+                )}
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-gray-400 mb-4">Want to see more of my work?</p>
+          <a 
+            href="https://github.com/Siya2-0" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            View All Projects on GitHub
+          </a>
         </div>
       </div>
     </section>
   );
 };
+
 
 // Current Work Page Component
 const CurrentWorkPage = () => {
