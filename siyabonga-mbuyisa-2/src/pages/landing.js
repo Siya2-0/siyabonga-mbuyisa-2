@@ -154,9 +154,15 @@ const AboutPage = () => {
     { name: 'JavaScript', level: 90 },
     { name: 'React', level: 85 },
     { name: 'Python', level: 80 },
-    { name: 'Node.js', level: 75 },
     { name: 'Java', level: 70 },
     { name: 'SQL', level: 85 },
+    { name: 'AWS', level: 60 },
+    { name: 'Git', level: 80 },
+    { name: 'HTML & CSS', level: 80 },
+    { name: 'Supabase', level: 75 },
+    { name: 'Django', level: 60 },
+    { name: 'C++ / C#', level: 75 }
+
   ];
 
   return (
@@ -168,17 +174,13 @@ const AboutPage = () => {
           <div className="animate-fade-in">
             <h3 className="text-2xl font-semibold mb-6 text-blue-400">Get to Know Me</h3>
             <p className="text-gray-300 mb-4">
-              I'm a passionate Computer Science graduate with a strong foundation in software development 
-              and problem-solving. My journey in technology started when I built my first website at 16, 
-              and since then I've been fascinated by how technology can transform lives.
+              My name is Siyabonga 'Siya' Mbuyisa, and I’m a software developer driven by the belief that software can solve real-world problems and create long-lasting solutions. My goal isn’t just to be another developer, but to work on exciting, impactful projects that change people’s lives. This is one of the reasons I love coding—it allows me to be part of such meaningful work.
             </p>
             <p className="text-gray-300 mb-4">
-              I enjoy creating efficient, scalable solutions to complex problems. My approach combines 
-              technical expertise with creative thinking to deliver impactful digital experiences.
+              Outside of coding, I’m passionate about sports and maintaining my health and fitness. Soccer is my favorite sport, and I play whenever I get the chance. I also enjoy other sports like rugby from time to time. But if I had to pick a favorite hobby, it would definitely be eating! I love trying new foods and exploring different cuisines, my current favourite meal is pizza with extra cheese.
             </p>
             <p className="text-gray-300">
-              When I'm not coding, you can find me exploring new technologies, contributing to open source 
-              projects, or sharing knowledge with other developers in the community.
+              I consider myself a social person who values spending quality time with family and friends. I also believe networking is a crucial part of personal and professional growth, and I’m always eager to connect with others and learn from their experiences. If you share similar interests or just want to chat, feel free to reach out!
             </p>
           </div>
           
