@@ -3,7 +3,7 @@ import SSO from '../assets/videos/Walkthrough.mp4';
 import EPG from '../assets/videos/11.02.2025_12.52.48_REC.mp4';
 import CRO from '../assets/images/sustainability-13-00225-g001-550.png';
 import KGA from '../assets/images/0_3dS6Jw8NzzSD-mn8.jpg';
-import CCB from '../assets/videos/ConfiComphyBeds.mp4';
+import CCB from '../assets/videos/Beds.mp4';
 
 // Main App Component
 const MainApp = () => {
