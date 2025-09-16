@@ -3,6 +3,7 @@ import SSO from '../assets/videos/Walkthrough.mp4';
 import EPG from '../assets/videos/11.02.2025_12.52.48_REC.mp4';
 import CRO from '../assets/images/sustainability-13-00225-g001-550.png';
 import KGA from '../assets/images/0_3dS6Jw8NzzSD-mn8.jpg';
+import CCB from '../assets/videos/ConfiComphyBeds.mp4';
 
 // Main App Component
 const MainApp = () => {
@@ -156,8 +157,8 @@ const HomePage = () => {
 const AboutPage = () => {
   const skills = [
     { name: 'JavaScript', level: 90 },
-    { name: 'React', level: 85 },
-    { name: 'Python', level: 80 },
+    { name: 'React', level: 75 },
+    { name: 'Python', level: 70 },
     { name: 'Java', level: 70 },
     { name: 'SQL', level: 85 },
     { name: 'AWS', level: 60 },
@@ -424,6 +425,18 @@ const ProjectsPage = () => {
       media: {
         type: 'image',
         url: KGA
+      }
+    },
+    {
+      id: 5,
+      name: 'Confi\'s Comphy Beds',
+      year: 2025,
+      technologies: ['React'],
+      description: 'ConfisComphyBeds is a modern, mobile-first React application that showcases a curated collection of high-quality beds, mattresses, and bed frames. The application provides customers with an intuitive shopping experience with robust filtering and product exploration features',
+      githubUrl: 'https://github.com/Siya2-0/ConfiComphyBeds',
+      media: {
+        type: 'video',
+        url: CCB
       }
     }
     // {
