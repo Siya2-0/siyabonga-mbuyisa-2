@@ -599,14 +599,9 @@ const CurrentWorkPage = () => {
       title: 'AI Stock Trader',
       description: 'Developing a machine learning model to predict stock market trends using historical data and sentiment analysis.',
       technologies: ['Python', 'ReactJS', 'AWS'],
-      progress: 65
+      progress: 75
     },
-    {
-      title: 'AI Alignment Course',
-      description: 'This course explores the principles of AI Alignment—how to design AI systems that reliably act in accordance with human values and intentions. Through a structured curriculum, it covers foundational topics in AI safety, including value alignment, robustness, and ethical deployment, with a focus on both theoretical frameworks and practical challenges.',
-      technologies: ['AI safety SA'],
-      progress: 60
-    }
+    
     // {
     //   title: 'Open Source Contribution',
     //   description: 'Contributing to open source projects focused on AI ethics and responsible technology development.',
