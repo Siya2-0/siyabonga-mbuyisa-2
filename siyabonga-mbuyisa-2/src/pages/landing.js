@@ -4,6 +4,7 @@ import EPG from '../assets/videos/11.02.2025_12.52.48_REC.mp4';
 import CRO from '../assets/images/sustainability-13-00225-g001-550.png';
 import KGA from '../assets/images/0_3dS6Jw8NzzSD-mn8.jpg';
 import CCB from '../assets/videos/Beds.mp4';
+import ANN from '../assets/images/Artificial Neural Network Diagram.png';
 
 // Main App Component
 const MainApp = () => {
@@ -437,6 +438,18 @@ const ProjectsPage = () => {
       media: {
         type: 'video',
         url: CCB
+      }
+    },
+    {
+      id: 6,
+      name: 'Artificial Neural Network',
+      year: 2025,
+      technologies: ['Python'],
+      description: 'A comprehensive implementation of a neural network from scratch for binary classification of mushrooms as edible or poisonous. This project provides educational insights into neural network fundamentals with detailed step-by-step demonstrations.',
+      githubUrl: 'https://github.com/Siya2-0/mushroom-neural-network',
+      media: {
+        type: 'image',
+        url: ANN
       }
     }
     // {
