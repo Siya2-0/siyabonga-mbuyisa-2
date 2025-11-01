@@ -5,6 +5,7 @@ import CRO from '../assets/images/sustainability-13-00225-g001-550.png';
 import KGA from '../assets/images/0_3dS6Jw8NzzSD-mn8.jpg';
 import CCB from '../assets/videos/Beds.mp4';
 import ANN from '../assets/images/Artificial Neural Network Diagram.png';
+import AISSA from '../assets/images/7c29bf16-134b-4953-bfd5-ec152e193f3d_960x540.jpg'
 
 // Main App Component
 const MainApp = () => {
@@ -248,6 +249,15 @@ const CertificatePage = () => {
       details: 'The AWS Cloud Practitioner certification validates understanding of AWS Cloud concepts, core AWS services, security, architecture, pricing, and support. Demonstrates cloud fluency and foundational AWS knowledge.',
       credentialLink: 'https://drive.google.com/file/d/1VXjEVeyB8lKG9gqpNijmWYUY5crAA5tT/view?usp=drive_link'
     },
+    {
+      id: 4,
+      title: 'Technical AI Safety',
+      issuer: 'AI Safety South Africa',
+      date: 'October 2025',
+      description: 'Intermediate course on AI safety and alignment.',
+      details: 'This course explores the principles of AI Alignment—how to design AI systems that reliably act in accordance with human values and intentions. Through a structured curriculum, it covers topics in AI safety, including value alignment, Reinforcement Learning from Human Feedback (RLHF), Large Language Models (LLM), Convolutional Neural Networks (CNN), Constitutional AI (CAI), Scalable Oversight, Mechanistic Interpretability, and ethical deployment, with a focus on both theoretical frameworks and practical challenges.',
+      credentialLink: 'https://cdn.certifier.io/d5e011ef-1627-477f-b902-9b169a1a2f81/credentials/01k8h2kvfwbmw156c3ev9p639f/designs/01k8h20s3qt894aarm55m9e47n/gsNoEua47A.png'
+    },
     // {
     //   id: 4,
     //   title: 'React Developer Certification',
@@ -451,6 +461,18 @@ const ProjectsPage = () => {
         type: 'image',
         url: ANN
       }
+    },
+    {
+      id: 7,
+      name: 'Cracking the Black Box: Why Understanding AI Brains is Our Greatest Challenge',
+      year: 2025,
+      technologies: ['Blog Post'],
+      description: 'A comprehensive exploration of the challenges and strategies in understanding AI systems. This blog post delves into the complexities of AI behavior, the importance of transparency, and the ongoing efforts to make AI more interpretable and aligned with human values.',
+      githubUrl: 'https://drive.google.com/file/d/1L0pndglY0ppcdIop3MLSbwMr8OJLLqx-/view?usp=sharing',
+      media: {
+        type: 'image',
+        url: AISSA
+      }
     }
     // {
     //   id: 5,
@@ -598,8 +620,8 @@ const CurrentWorkPage = () => {
     {
       title: 'AI Stock Trader',
       description: 'Developing a machine learning model to predict stock market trends using historical data and sentiment analysis.',
-      technologies: ['Python', 'ReactJS', 'AWS'],
-      progress: 75
+      technologies: ['Fastapi', 'ReactJS', ],
+      progress: 85
     },
     
     // {
